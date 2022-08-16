@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:fl_chart/fl_chart.dart';
 
 import 'linechart.dart';
 
@@ -12,52 +11,58 @@ class GroupWidget extends StatefulWidget {
 class _GroupWidgetState extends State<GroupWidget> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-        alignment:Alignment.topCenter,
-      children: <Widget>[
-
-        Column(
-          children: <Widget>[
-            Text(" "),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Scrollbar(
+        child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            reverse: true,
+            padding: EdgeInsets.all(0.0),
+            physics: BouncingScrollPhysics(),
+            child:Stack(
+              alignment:Alignment.topCenter,
               children: <Widget>[
-                Image.asset('assets/images/Back-Navs.png')
-                ,Text('心律資訊', textAlign: TextAlign.left, style: TextStyle(
-                    color: Color.fromRGBO(29, 21, 23, 1),
-                    fontFamily: 'Poppins',
-                    fontSize: 24,
-                    letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.bold,
-                    height: 1.25
-                ),),
-                Image.asset('assets/images/Detail-Navs.png')
-              ],
-            ),
-            Text(" "),
-            Text(" "),
-            Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[Image.asset('assets/images/Group 10015.png'),
-                Positioned(
-                  top:170,
-                  child: Text(" 66 BPN",textAlign: TextAlign.end,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Poppins',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 0
-                   ),
-                ),
-                ),
-                ]
-            ),
-            Text(" "),
-            Text(" "),
-            Container(
 
-                      decoration: BoxDecoration(
+                Column(
+                  children: <Widget>[
+                    Text(" "),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Image.asset('assets/images/Back-Navs.png')
+                        ,Text('心律資訊', textAlign: TextAlign.left, style: const TextStyle(
+                            color: Color.fromRGBO(29, 21, 23, 1),
+                            fontFamily: 'Poppins',
+                            fontSize: 24,
+                            letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+                            fontWeight: FontWeight.bold,
+                            height: 1.25
+                        ),),
+                        Image.asset('assets/images/Detail-Navs.png')
+                      ],
+                    ),
+                    const Text(" "),
+                    const Text(" "),
+                    Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: <Widget>[Image.asset('assets/images/Group 10015.png'),
+                          const Positioned(
+                            top:170,
+                            child: Text(" 66 BPN",textAlign: TextAlign.end,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Poppins',
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 0
+                              ),
+                            ),
+                          ),
+                        ]
+                    ),
+                    const Text(" "),
+                    const Text(" "),
+                    Container(
+
+                      decoration: const BoxDecoration(
                         borderRadius : BorderRadius.only(
                           topLeft: Radius.circular(99),
                           topRight: Radius.circular(99),
@@ -92,10 +97,10 @@ class _GroupWidgetState extends State<GroupWidget> {
                         ],
                       ),
                     ),//心率方塊
-            LineChartSample10(),
-          ],
-        ),
-      ],
-    );
+                    LineChartSample10(),
+                  ],
+                ),
+              ],
+            )));
   }
 }
