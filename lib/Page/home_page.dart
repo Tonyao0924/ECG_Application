@@ -1,106 +1,347 @@
 import 'package:flutter/material.dart';
 
+import 'package:ecg/commonComponents/theme.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
-import 'linechart.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:ecg/model/homePageSaleModel.dart';
 
-class GroupWidget extends StatefulWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
-  _GroupWidgetState createState() => _GroupWidgetState();
+  _HomePageWidgetState createState() => _HomePageWidgetState();
 }
 
-class _GroupWidgetState extends State<GroupWidget> {
+class _HomePageWidgetState extends State<HomePage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  late TooltipBehavior _tooltipBehavior;
+
+  @override
+  void initState() {
+    _tooltipBehavior = TooltipBehavior(enable: true);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-        child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            reverse: true,
-            padding: EdgeInsets.all(0.0),
-            physics: BouncingScrollPhysics(),
-            child:Stack(
-              alignment:Alignment.topCenter,
-              children: <Widget>[
-
-                Column(
-                  children: <Widget>[
-                    Text(" "),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Image.asset('assets/images/Back-Navs.png')
-                        ,Text('心律資訊', textAlign: TextAlign.left, style: const TextStyle(
-                            color: Color.fromRGBO(29, 21, 23, 1),
-                            fontFamily: 'Poppins',
-                            fontSize: 24,
-                            letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                            fontWeight: FontWeight.bold,
-                            height: 1.25
-                        ),),
-                        Image.asset('assets/images/Detail-Navs.png')
-                      ],
+    return Scaffold(
+      key: scaffoldKey,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(10),
+        child: AppBar(
+          backgroundColor: const Color(0xFF6C9A8B),
+          automaticallyImplyLeading: false,
+          actions: const [],
+          elevation: 1,
+        ),
+      ),
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 325,
+                height: 150,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFE2ECEA),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: SfCartesianChart(
+                    primaryXAxis: CategoryAxis(), // Chart title
+                    title: ChartTitle(text: 'ECG'),
+                    // Enable legend
+                    //legend: Legend(isVisible: true),
+                    // Enable tooltip
+                    tooltipBehavior: _tooltipBehavior,
+                    series: <LineSeries<SalesData, String>>[
+                      LineSeries<SalesData, String>(
+                        // Bind data source
+                          dataSource: <SalesData>[
+                            SalesData('1', 35),
+                            SalesData('2', 28),
+                            SalesData('3', 34),
+                            SalesData('4', 32),
+                            SalesData('5', 40),
+                            SalesData('6', 35),
+                            SalesData('7', 28),
+                            SalesData('8', 34),
+                            SalesData('9', 32),
+                            SalesData('10', 40),
+                            SalesData('11', 35),
+                            SalesData('12', 28),
+                            SalesData('13', 34),
+                            SalesData('14', 32),
+                            SalesData('15', 40),
+                            SalesData('16', 35),
+                            SalesData('17', 28),
+                            SalesData('18', 34),
+                            SalesData('19', 32),
+                            SalesData('20', 40),
+                            SalesData('21', 35),
+                            SalesData('22', 28),
+                            SalesData('23', 34),
+                            SalesData('24', 32),
+                            SalesData('25', 40),
+                            SalesData('26', 35),
+                            SalesData('27', 28),
+                            SalesData('28', 34),
+                            SalesData('29', 32),
+                            SalesData('30', 40),
+                            SalesData('31', 35),
+                            SalesData('32', 28),
+                            SalesData('33', 34),
+                            SalesData('34', 32),
+                            SalesData('35', 40),
+                            SalesData('36', 35),
+                            SalesData('37', 28),
+                            SalesData('38', 34),
+                            SalesData('39', 32),
+                            SalesData('40', 40),
+                            SalesData('41', 35),
+                            SalesData('42', 28),
+                            SalesData('43', 34),
+                            SalesData('44', 32),
+                            SalesData('45', 40),
+                            SalesData('46', 35),
+                            SalesData('47', 28),
+                            SalesData('48', 34),
+                            SalesData('49', 32),
+                            SalesData('50', 40),
+                          ],
+                          xValueMapper: (SalesData sales, _) => sales.year,
+                          yValueMapper: (SalesData sales, _) => sales.sales)
+                    ]),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFE2ECEA),
+                      borderRadius: BorderRadius.circular(10),
+                      shape: BoxShape.rectangle,
                     ),
-                    const Text(" "),
-                    const Text(" "),
-                    Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: <Widget>[Image.asset('assets/images/Group 10015.png'),
-                          const Positioned(
-                            top:170,
-                            child: Text(" 66 BPN",textAlign: TextAlign.end,
-                              style: TextStyle(
-                                  color: Colors.white,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                '最近發生時間',
+                                style: FlutterFlowTheme.of(context).bodyText1,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                              const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              child: Text(
+                                '16:59-17:01',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
                                   fontFamily: 'Poppins',
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 0
+                                  color: const Color(0xFFE6AFA5),
+                                ),
                               ),
                             ),
-                          ),
-                        ]
+                          ],
+                        ),
+                        Image.asset(
+                          'assets/images/icons8-time-machine-48.png',
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      ],
                     ),
-                    const Text(" "),
-                    const Text(" "),
-                    Container(
-
-                      decoration: const BoxDecoration(
-                        borderRadius : BorderRadius.only(
-                          topLeft: Radius.circular(99),
-                          topRight: Radius.circular(99),
-                          bottomLeft: Radius.circular(99),
-                          bottomRight: Radius.circular(99),
+                  ),
+                  Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFE2ECEA),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                '最近結果機率',
+                                style: FlutterFlowTheme.of(context).bodyText1,
+                              ),
+                            ],
+                          ),
                         ),
-                        boxShadow : [BoxShadow(
-                            color: Color.fromRGBO(149, 173, 254, 0.30000001192092896),
-                            offset: Offset(0,10),
-                            blurRadius: 22
-                        )],
-                        gradient : LinearGradient(
-                            begin: Alignment(-0.7458379864692688,-0.05771365016698837),
-                            end: Alignment(0.05771365016698837,-0.05470772832632065),
-                            colors: [Color.fromRGBO(112, 158, 148, 1),Color.fromRGBO(157, 206, 255, 1)]
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                              const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              child: Text(
+                                '57%',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                  fontFamily: 'Poppins',
+                                  color: const Color(0xFFE6AFA5),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 18),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-
-                        children: <Widget>[
-                          Text('心律正常', textAlign: TextAlign.left, style: TextStyle(
-                              color: Color.fromRGBO(255, 255, 255, 1),
-                              fontFamily: 'Poppins',//字體
-                              fontSize: 20,
-                              letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                              fontWeight: FontWeight.normal,//文字正常粗細
-                              height: 1.2
-                          ),),
-
-                        ],
-                      ),
-                    ),//心率方塊
-                    LineChartSample10(),
+                        CircularPercentIndicator(
+                          percent: 0.57,
+                          radius: 40,
+                          lineWidth: 15,
+                          animation: true,
+                          progressColor: const Color(0xFF6C9A8B),
+                          backgroundColor: const Color(0xFFF1F4F8),
+                          center: Text(
+                            '57%',
+                            style:
+                            FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: const Color(0xFF6C9A8B),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          startAngle: 180,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                width: 325,
+                height: 150,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFE2ECEA),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                          child: Text(
+                            '最近症狀',
+                            style: FlutterFlowTheme.of(context).bodyText1,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              '胸痛',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                fontFamily: 'Poppins',
+                                color: const Color(0xFFE6AFA5),
+                              ),
+                            ),
+                            Image.asset(
+                              'assets/images/icons8-chest-pain-100.png',
+                              width: 80,
+                              height: 80,
+                              fit: BoxFit.cover,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              '噁心',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                fontFamily: 'Poppins',
+                                color: const Color(0xFFE6AFA5),
+                              ),
+                            ),
+                            Image.asset(
+                              'assets/images/icons8-vomiting-96.png',
+                              width: 80,
+                              height: 80,
+                              fit: BoxFit.cover,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              '呼吸困難',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                fontFamily: 'Poppins',
+                                color: const Color(0xFFE6AFA5),
+                              ),
+                            ),
+                            Image.asset(
+                              'assets/images/icons8-asthma-64.png',
+                              width: 80,
+                              height: 80,
+                              fit: BoxFit.cover,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            )));
+              ),
+            ],
+          ),
+        ),
+      ),
+      // bottomNavigationBar:Theme(
+      //   data: ThemeData(
+      //     splashColor: Colors.transparent,
+      //     highlightColor: Colors.transparent,
+      //   ),
+      //   child: const FooterNavigation(),
+      // )
+    );
   }
 }

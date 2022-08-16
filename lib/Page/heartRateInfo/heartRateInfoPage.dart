@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 import 'heartRateInfoChart.dart';
 
-class GroupWidget extends StatefulWidget {
-  const GroupWidget({Key? key}) : super(key: key);
+class HeartRateInfoPage extends StatefulWidget {
+  const HeartRateInfoPage({Key? key}) : super(key: key);
 
   @override
   _GroupWidgetState createState() => _GroupWidgetState();
 }
 
-class _GroupWidgetState extends State<GroupWidget> {
+class _GroupWidgetState extends State<HeartRateInfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
