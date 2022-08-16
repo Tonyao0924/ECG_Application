@@ -1,15 +1,20 @@
-# ecg
+# ECG_Application
 
-A new Flutter ECG  project.
+###### required environment
+
+Flutter 3.0.5
+Dart 2.17.6
+DevTools 2.12.2
+
+### Page List and Collaborator
+
+1. HomePage (Weber)
+2. HeartRateInfo (LEO)
+3. SingleDayAnalysis (FKT)
+4. PastAnalysis (Min)
+
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
