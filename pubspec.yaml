@@ -29,14 +29,29 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #font
   font_awesome_flutter: any
+  auto_size_text: 3.0.0
   charts_flutter: any
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  google_fonts: 3.0.1
+  #picture
   flutter_svg: ^0.21.0-nullsafety.0
   cupertino_icons: ^1.0.2
+  cached_network_image: 3.2.1
+  #chart
   fl_chart: ^0.55.1
+  syncfusion_flutter_charts: ^20.2.43
+  #animate
+  page_transition: 2.0.9
+  #other
   http: ^0.13.5
+  intl: 0.17.0
+  json_path: 0.4.1
+  percent_indicator: 4.2.2
+  shared_preferences: 2.0.15
+  timeago: 3.2.2
+  url_launcher: 6.1.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
