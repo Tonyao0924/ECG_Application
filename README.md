@@ -17,8 +17,28 @@ DevTools 2.12.2
 5. PastAnalysis (Min)
 6. DetailInfo (Tony)
 
+### Project Structure
 
-## Getting Started
+``` tree
+├─lib
+│  ├─commonComponents (Put Common Components)
+│  ├─config 
+│  ├─manager (For API request)
+│  ├─model (Data Object Model)
+│  └─Page (UI Page)
+│      ├─detailinfo (Put specify components of page)
+│      ├─heartRateInfo
+│      ├─homePage
+│      ├─pastAnalysis
+│      ├─singleDayAnalysis
+│      └─<...Directory>
+```
+
+### Technical Support
+
+[Flutter](https://github.com/fan9704/ECG_Application/blob/master/Reference.MD)
+
+### Getting Started
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
