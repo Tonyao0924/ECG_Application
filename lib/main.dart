@@ -1,4 +1,5 @@
 import 'package:ecg/Page/home_page.dart';
+import 'package:ecg/Page/pastAnalysis/pastAnalysisPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Page/heartRateInfo/heartRateInfoPage.dart';
@@ -33,7 +34,7 @@ class BottomNavigationController extends StatefulWidget {
 }
 class _BottomNavigationControllerState extends State<BottomNavigationController> {
   int _currentIndex = 0;
-  final pages = [const HomePage() ,const HeartRateInfoPage(),const SingleDayAnalysisPage(),const SymptomCheckPage()];
+  final pages = [const HomePage() ,const HeartRateInfoPage(),const SingleDayAnalysisPage(),const SymptomCheckPage(),const PastAnalysisPage()];
   final _controller = PageController(initialPage: 0);
   static const _duration = Duration(milliseconds: 300);
   static const _curve = Curves.easeInOutCubic;

@@ -27,15 +27,15 @@ class _HomePageWidgetState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(10),
-        child: AppBar(
-          backgroundColor: const Color(0xFF6C9A8B),
-          automaticallyImplyLeading: false,
-          actions: const [],
-          elevation: 1,
-        ),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: const Size.fromHeight(10),
+      //   child: AppBar(
+      //     backgroundColor: const Color(0xFF6C9A8B),
+      //     automaticallyImplyLeading: false,
+      //     actions: const [],
+      //     elevation: 1,
+      //   ),
+      // ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
         child: GestureDetector(
