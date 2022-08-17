@@ -15,6 +15,7 @@ DevTools 2.12.2
 3. SingleDayAnalysis (FKT)
 4. SymptomCheck (Kevin)
 5. PastAnalysis (Min)
+6. DetailInfo (Tony)
 
 
 ## Getting Started
