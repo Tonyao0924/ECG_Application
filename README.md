@@ -3,7 +3,9 @@
 ###### required environment
 
 Flutter 3.0.5
+
 Dart 2.17.6
+
 DevTools 2.12.2
 
 ### Page List and Collaborator
@@ -11,8 +13,8 @@ DevTools 2.12.2
 1. HomePage (Weber)
 2. HeartRateInfo (LEO)
 3. SingleDayAnalysis (FKT)
-4. PastAnalysis (Min)
-5. SymptomCheck (Kevin)
+4. SymptomCheck (Kevin)
+5. PastAnalysis (Min)
 
 
 ## Getting Started
