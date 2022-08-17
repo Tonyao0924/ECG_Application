@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'grid_item.dart';
 
-class SymptomCheck extends StatefulWidget {
+class SymptomCheckPage extends StatefulWidget {
+  const SymptomCheckPage({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _SymptomCheckState();
 }
 
-class _SymptomCheckState extends State<SymptomCheck> {
+class _SymptomCheckState extends State<SymptomCheckPage> {
   late List<Item> itemList;
   late List<Item> selectedList;
 
@@ -17,7 +19,7 @@ class _SymptomCheckState extends State<SymptomCheck> {
         GridView.builder(
             shrinkWrap: true,
             itemCount: itemList.length,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 1,
@@ -43,14 +45,14 @@ class _SymptomCheckState extends State<SymptomCheck> {
           alignment: Alignment.center,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              shape: StadiumBorder(),
+              shape: const StadiumBorder(),
               padding: const EdgeInsets.all(0.0),
               elevation: 5,
             ),
             onPressed: () {},
             child: Ink(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                     colors: [Color(0xFF709E94), Color(0xFF9DCEFF)]),
                 borderRadius: BorderRadius.circular(30),
               ),

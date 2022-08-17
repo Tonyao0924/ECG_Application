@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'symptom_check.dart';
+import 'symptomCheckPage.dart';
 
 class GridItem extends StatefulWidget {
   final Item item;
@@ -29,16 +29,16 @@ class _GridItemState extends State<GridItem> {
             children: [
               Container(
                 //color: Colors.lightBlue,
-                padding: EdgeInsets.fromLTRB(17.5,  15, 17.5, 0),
+                padding: const EdgeInsets.fromLTRB(17.5,  15, 17.5, 0),
                 decoration: BoxDecoration(
-                    color: Color(0xFF6C9A8B),
+                    color: const Color(0xFF6C9A8B),
                     borderRadius: BorderRadius.circular(30),
                 ),
                 child:Image.asset(
                   widget.item.imageUrl,
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Container(
                 alignment: Alignment.bottomCenter,
                 child: Container(
@@ -52,14 +52,14 @@ class _GridItemState extends State<GridItem> {
 
           isSelected
               ? const Align(
-            alignment: Alignment.bottomRight,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.check_circle,
-                color: Colors.blue,
-              ),
-            ),
+                  alignment: Alignment.bottomRight,
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.check_circle,
+                      color: Colors.blue,
+                    ),
+                  ),
           )
               : Container()
         ],

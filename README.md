@@ -12,6 +12,7 @@ DevTools 2.12.2
 2. HeartRateInfo (LEO)
 3. SingleDayAnalysis (FKT)
 4. PastAnalysis (Min)
+5. SymptomCheck (Kevin)
 
 
 ## Getting Started

@@ -4,8 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Page/heartRateInfo/heartRateInfoPage.dart';
 import 'Page/singleDayAnalysis/singleDayAnalysisPage.dart';
 
-import 'Page/symptomCheck/DDDDDDDemo/home.dart'; // for demo
-
+import 'Page/symptomCheck/symptomCheckPage.dart';
 import 'config/palette.dart';
 void main() => runApp(const MyApp());
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Palette.mycolor,
       ),
       home: const Scaffold(
-        body: Home(title: "title"), // for demo
+        body: BottomNavigationController(), // for demo
 
       ),
     );
@@ -34,7 +33,7 @@ class BottomNavigationController extends StatefulWidget {
 }
 class _BottomNavigationControllerState extends State<BottomNavigationController> {
   int _currentIndex = 0;
-  final pages = [const HomePage() ,const HeartRateInfoPage(),const SingleDayAnalysisPage()];
+  final pages = [const HomePage() ,const HeartRateInfoPage(),const SingleDayAnalysisPage(),const SymptomCheckPage()];
   final _controller = PageController(initialPage: 0);
   static const _duration = Duration(milliseconds: 300);
   static const _curve = Curves.easeInOutCubic;

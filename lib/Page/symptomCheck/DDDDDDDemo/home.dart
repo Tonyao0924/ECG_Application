@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../symptom_check.dart';
+import '../symptomCheckPage.dart';
 
-import 'navbar.dart'; // for Demo , will discuss when meeting
 
 
 class Home extends StatefulWidget{
@@ -22,17 +21,17 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
       ),
-      body: SymptomCheck(),
+      body: const SymptomCheckPage(),
 
 
 
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
+        backgroundColor: Color(0xFFE8998D),
         child: FaIcon(FontAwesomeIcons.house,color: Colors.white,),
-        backgroundColor: const Color(0xFFE8998D),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: DDDemoFooterNavigation(),
+      // bottomNavigationBar: const DDDemoFooterNavigation(),
 
 
 
