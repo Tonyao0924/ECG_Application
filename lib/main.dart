@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Page/heartRateInfo/heartRateInfoPage.dart';
 import 'Page/singleDayAnalysis/singleDayAnalysisPage.dart';
+
+import 'Page/symptomCheck/DDDDDDDemo/home.dart'; // for demo
+
 import 'config/palette.dart';
 void main() => runApp(const MyApp());
 
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Palette.mycolor,
       ),
       home: const Scaffold(
-        body: BottomNavigationController(),
+        body: Home(title: "title"), // for demo
 
       ),
     );
