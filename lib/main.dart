@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Page/heartRateInfo/heartRateInfoPage.dart';
 import 'Page/singleDayAnalysis/singleDayAnalysisPage.dart';
+import 'package:ecg/Page/login/loginPage.dart';
 
 import 'Page/symptomCheck/symptomCheckPage.dart';
 import 'config/palette.dart';
@@ -40,7 +41,7 @@ class _BottomNavigationControllerState
     const HeartRateInfoPage(),
     const SingleDayAnalysisPage(),
     const SymptomCheckPage(),
-    const DetailInfoPage(),
+    LoginPage(),
     const PastAnalysisPage()
   ];
 

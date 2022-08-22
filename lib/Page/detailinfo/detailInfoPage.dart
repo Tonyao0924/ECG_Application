@@ -10,7 +10,8 @@ class DetailInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: const HeaderBar(),
-      body: Center(
+      body: Container(
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
